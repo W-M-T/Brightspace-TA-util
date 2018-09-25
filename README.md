@@ -1,4 +1,4 @@
-# How to patch https://github.com/squell/bb-scripts with this script:
+# How to patch https://github.com/squell/bb-scripts with this distribution script:
 
 In ```feedback.sh```, replace
 ```bash
@@ -24,3 +24,9 @@ and remove
 echo Randomly distributing workload 
 "$MYDIR"/hak3.sh "${!email[@]}" 
 ```
+# How to obtain the group_[ta_name] files:
+If you're in luck you can get the enrollment info for each student using the Export Grades functionality with a field like "Group Enrollment". In this case you only need to parse the csv for this info. This is not the use case that this repo provides however.
+
+This repo assumes that this field does not exist in the grade exporter (for some courses this seems to be the case, weirdly enough?).
+To obtain ta group files using this utility, you select ```Enroll Users``` under the desired group category under ```Administration``` -> ```Groups```, set the display size to 200, and download the html pages to the same folder as ```scrapegroups.py```. It's an ugly solution, but it works with a lack of a better way to access this data such as discussed earlier.
+Currently it uses the regex ```RE_CUSTOM_GROUP_NAME``` to translate a group to the first name of the ta. You will need to write a new regex if your course uses a different naming scheme. The easiest way to implement this translation is to just write a lookup table.
