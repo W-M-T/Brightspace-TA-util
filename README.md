@@ -1,11 +1,11 @@
-# How to use this script to distribute work by group:
+# How to use these scripts to distribute work by group:
 
 - Enter the names and mail addresses of the TA's to distribute over in ```ta_groupify.py```.
 - Patch ```verdeel.sh``` as described below.
 - Ensure there are group_[ta_name] files (see below as well)
 - Run the bash scripts as you would normally.
 
-# How to patch https://github.com/squell/bb-scripts with this distribution script:
+# How to patch https://github.com/squell/bb-scripts with the distribution script:
 
 In ```feedback.sh```, replace
 ```bash
